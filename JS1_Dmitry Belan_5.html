@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>numberInObject</title>
+		<style>
+			html {background: white;}
+    		table {border-collapse: collapse; margin: 0 auto;}
+			td {border: 1px solid black; width: 50px; height: 50px;
+    		text-align: center;}
+    		body { width: 60%; padding: 50px;  margin: 0 auto; height: 100%; background: #e0e9ea; }
+    		img {width: 50px; height: 50px;} 
+  		</style>
+	</head>
+<body>	
+	<header>
+	</header>
+
+	<script>
+	function CreationChessboard() {
+        let tr, celle;
+        let table  = document.createElement('table');
+        var rows = new Array('','A','B','C','D','E','F','G','H','');
+        var collumns = new Array('','1','2','3','4','5','6','7','8','');
+        for (i = 0; i < 10; i++) {
+            tr = document.createElement("tr");
+            for (let j = 0; j < 10; j++) {             
+               	let celle = document.createElement("td");
+               	celle.setAttribute('id', i);
+               	tr.appendChild(celle);
+               	celle.style.backgroundColor = (i % 2 == 0) && (j %2 != 0) || (i % 2 != 0) && (j %2 == 0)? '#fff999' : '#953800';
+               	if ((i == 0) || (i == 9)) {
+               		celle.style.backgroundColor =  'white';
+               		celle.innerHTML = rows[j];
+               	}
+               	else if ((j == 0) || (j == 9)) {
+               		celle.style.backgroundColor =  'white';
+               		celle.innerHTML = collumns[i];
+               	}
+               	else if (i == 2) {
+               		celle.innerHTML = "<img src='img/peshca (2).png'/>";
+               	}
+               	else if (i == 7) {
+               		celle.innerHTML = "<img src='img/peshca.png'/>";
+               	}
+               	else if ((i == 1)  && ((j == 1) || (j == 8)) ) {
+               		celle.innerHTML = "<img src='img/ladja (2).png'/>";
+               	}
+               	else if ((i == 8) && ((j == 1) || (j == 8)) ) {
+               		celle.innerHTML = "<img src='img/ladja.png'/>";
+               	}
+               	else if ((i == 1)  && ((j == 2) || (j == 7)) ) {
+               		celle.innerHTML = "<img src='img/hors (2).png'/>";
+               	}
+               	else if ((i == 8) && ((j == 2) || (j == 7)) ) {
+               		celle.innerHTML = "<img src='img/hors.png'/>";
+               	}
+               	else if ((i == 1) && ((j == 3) || (j == 6)) ) {
+               		celle.innerHTML = "<img src='img/slon (2).png'/>"
+               	}
+               	else if ((i == 8) && ((j == 3) || (j == 6)) ) {
+               		celle.innerHTML = "<img src='img/slon.png'/>"
+               	}
+               	else if ((i == 1) && (j == 4)) {
+               		celle.innerHTML = "<img src='img/ferz (2).png'/>";
+               	}
+               	else if ((i == 8) && (j == 4)) {
+               		celle.innerHTML = "<img src='img/ferz.png'/>";
+               	}
+               	else if ((i == 1) && (j == 5)) {
+               		celle.innerHTML = "<img src='img/king (2).png'/>";
+               	}
+               	else if ((i == 8) && (j == 5)) {
+               		celle.innerHTML = "<img src='img/king.png'/>";
+               	}
+            }
+           	table.appendChild(tr);
+
+        } 
+    	document.body.appendChild(table);
+    }
+    CreationChessboard();
+
+	</script>
+<footer>
+</footer>
+</body>
+</html>
