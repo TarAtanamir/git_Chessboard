@@ -18,14 +18,14 @@
 
 	<script>
 	function CreationChessboard() {
-        let tr, celle;
-        let table  = document.createElement('table');
+        var tr, celle;
+        var table  = document.createElement('table');
         var rows = new Array('','A','B','C','D','E','F','G','H','');
         var collumns = new Array('','1','2','3','4','5','6','7','8','');
         for (i = 0; i < 10; i++) {
             tr = document.createElement("tr");
-            for (let j = 0; j < 10; j++) {             
-               	let celle = document.createElement("td");
+            for (var j = 0; j < 10; j++) {             
+               	var celle = document.createElement("td");
                	celle.setAttribute('id', i);
                	tr.appendChild(celle);
                	celle.style.backgroundColor = (i % 2 == 0) && (j %2 != 0) || (i % 2 != 0) && (j %2 == 0)? '#fff999' : '#953800';
@@ -81,8 +81,11 @@
     }
     CreationChessboard();
 
+    var chess = new CreationChessboard();
+    
 	</script>
-<footer>
-</footer>
+	<footer>
+	</footer>	
+
 </body>
 </html>
